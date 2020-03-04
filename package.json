@@ -1,0 +1,38 @@
+{
+  "name": "change-last-modified-date",
+  "version": "1.0.0",
+  "description": "Change last modified date of the post",
+  "main": "block-editor/dist/index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "lint:pkg-json": "wp-scripts lint-pkg-json",
+    "start": "wp-scripts start",
+    "test:e2e": "wp-scripts test-e2e",
+    "test:unit": "wp-scripts test-unit-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djuric/change-last-modified-date.git"
+  },
+  "author": "Zarko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djuric/change-last-modified-date/issues"
+  },
+  "homepage": "https://github.com/djuric/change-last-modified-date#readme",
+  "devDependencies": {
+    "@wordpress/scripts": "7.1.2",
+    "css-loader": "^3.4.2",
+    "ignore-emit-webpack-plugin": "^2.0.2",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "path": "^0.12.7",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "sass-loader": "^8.0.2"
+  }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<ruleset name="Clm_Date">
+	<config name="minimum_supported_wp_version" value="5.2" />
+	<config name="testVersion" value="7.0-"/>
+
+	<rule ref="PHPCompatibilityWP"/>
+	<rule ref="WordPress-Docs" />
+	<rule ref="WordPress-Extra" />
+	<rule ref="WordPressVIPMinimum" />
+	<rule ref="WordPress-VIP-Go" />
+	<rule ref="VariableAnalysis" />
+
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="clm-date"/>				
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Temporarily disable some sniffs that conflict with PSR-4. -->
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>packages/*</exclude-pattern>
+	</rule>
+	<rule ref="WordPress.Files.FileName.NotHyphenatedLowercase">
+		<exclude-pattern>packages/*</exclude-pattern>
+	</rule>
+
+	<!-- Check all PHP files in directory tree by default. -->
+	<arg name="extensions" value="php"/>
+	<file>.</file>
+
+	<!-- Show sniff codes in all reports -->
+	<arg value="s"/>
+
+	<arg name="colors"/>
+
+	<exclude-pattern>/node_modules/*</exclude-pattern>
+	<exclude-pattern>/tests/*</exclude-pattern>
+	<exclude-pattern>/vendor/*</exclude-pattern>
+</ruleset>
