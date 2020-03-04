@@ -26,6 +26,10 @@ define( 'CLM_DATE_POST_TYPES', ['post-type-slug-1', 'post-type-slug-2'] );
 
 <p>Custom post types are also required to have "custom-fields" support declared.</p>
 
+= Support =
+
+<p>For support or code contributions please refer to <a href="https://github.com/djuric/change-last-modified-date">Github repo</a>.</p>
+
 == Installation ==
 1. Upload zip package to Plugins > Add New in admin of wordpress.
 2. Activate the plugin.
