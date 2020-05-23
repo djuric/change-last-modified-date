@@ -21,20 +21,20 @@ const PostModifiedDateFreeze = ({ meta, handleFreezeModified }) => {
 };
 
 export default compose([
-  withSelect(select => {
+  withSelect((select) => {
     return {
-      meta: select('core/editor').getEditedPostAttribute('meta')
+      meta: select('core/editor').getEditedPostAttribute('meta'),
     };
   }),
-  withDispatch(dispatch => {
+  withDispatch((dispatch) => {
     return {
       handleFreezeModified(meta, stopModifiedUpdate) {
         const newMeta = {
           ...meta,
-          _stopmodifiedupdate: stopModifiedUpdate
+          _stopmodifiedupdate: stopModifiedUpdate,
         };
         dispatch('core/editor').editPost({ meta: newMeta });
-      }
+      },
     };
-  })
+  }),
 ])(PostModifiedDateFreeze);

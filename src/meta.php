@@ -15,3 +15,14 @@ register_meta(
 		'auth_callback' => '__return_true',
 	]
 );
+
+register_meta(
+	'post',
+	'_modified_date',
+	[
+		'show_in_rest'  => true,
+		'type'          => 'string',
+		'single'        => true,
+		'auth_callback' => '__return_true',
+	]
+);

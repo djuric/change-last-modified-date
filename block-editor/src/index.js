@@ -9,6 +9,12 @@ import { PluginPostStatusInfo } from '@wordpress/edit-post';
  */
 import PostModifiedDateChange from './components/post-modified-date-change';
 import PostModifiedDateFreeze from './components/post-modified-date-freeze';
+import { addHiddenModifiedInput } from './utils/meta-box-field';
+
+/**
+ * Hidden input is required to make it backwards compatible with Meta Boxes.
+ */
+addHiddenModifiedInput();
 
 const PluginChangeLastModified = () => {
   return (
@@ -24,5 +30,5 @@ const PluginChangeLastModified = () => {
 };
 
 registerPlugin('post-change-last-modified', {
-  render: PluginChangeLastModified
+  render: PluginChangeLastModified,
 });

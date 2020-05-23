@@ -11,7 +11,7 @@ const PostModifiedDateChange = ({
   editedModified,
   currentModified,
   handleModified,
-  meta
+  meta,
 }) => {
   const settings = __experimentalGetSettings();
   const dateTimeFormat = `${settings.formats.date} ${settings.formats.time}`;
@@ -46,7 +46,7 @@ const PostModifiedDateChange = ({
             renderContent={() => (
               <DateTimePicker
                 currentDate={editedModified}
-                onChange={modified => handleModified(modified)}
+                onChange={(modified) => handleModified(modified)}
               />
             )}
           />
@@ -57,20 +57,23 @@ const PostModifiedDateChange = ({
 };
 
 export default compose([
-  withSelect(select => {
+  withSelect((select) => {
     return {
       editedModified: select('core/editor').getEditedPostAttribute('modified'),
       currentModified: select('core/editor').getCurrentPostAttribute(
         'modified'
       ),
-      meta: select('core/editor').getEditedPostAttribute('meta')
+      meta: select('core/editor').getEditedPostAttribute('meta'),
     };
   }),
-  withDispatch(dispatch => {
+  withDispatch((dispatch) => {
     return {
       handleModified(modified) {
+        document
+          .getElementById('clm-modified-date')
+          .setAttribute('value', modified);
         dispatch('core/editor').editPost({ modified });
-      }
+      },
     };
-  })
+  }),
 ])(PostModifiedDateChange);
