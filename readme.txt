@@ -16,7 +16,7 @@ Change or prevent updating Last Modified date for individual posts.
 
 <p>When this plugin is active it will enable Last modified date options in Status & Visibility panel in sidebar. Changing the modified date can be done by clicking the date link and selecting a new date for the post. It's also possible to disable future updates of the last modified date by setting the "Freeze modified date" option to on.</p>
 
-= About custom post types support =
+= Custom post types support =
 
 <p>To update the last modified date, plugin is using "rest_pre_insert_{$post_type}" hook which is executed before "init" where other custom post types are usually registered. This is the reason why plugin is not aware of any additional post types other than those registered by WordPress core. To support additional post types you can add constant in following format to wp-config.php:</p>
 
