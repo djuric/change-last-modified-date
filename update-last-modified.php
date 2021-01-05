@@ -8,7 +8,7 @@
  * Plugin Name:       Change Last Modified Date
  * Plugin URI:        https://zarko.dev
  * Description:       Change or prevent updating Last Modified date for each post when editing from admin panel.
- * Version:           1.4.0
+ * Version:           1.4.1
  * Author:            Zarko
  * Author URI:        https://zarko.dev
  * Text Domain:       clm-date

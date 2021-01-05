@@ -4,7 +4,7 @@ Tags: last modified, edit date, edit last modified
 Requires at least: 5.1
 Tested up to: 5.3.2
 Requires PHP: 5.6
-Stable tag: 1.3
+Stable tag: 1.4.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
