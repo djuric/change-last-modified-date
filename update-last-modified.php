@@ -21,7 +21,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-define( 'CLM_DATE_VERSION', '1.0.0' );
+define( 'CLM_DATE_VERSION', '1.4.1' );
 define( 'CLM_DATE_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CLM_DATE_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
