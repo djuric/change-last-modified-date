@@ -1,6 +1,6 @@
 {
   "name": "change-last-modified-date",
-  "version": "1.0.0",
+  "version": "1.4.1",
   "description": "Change last modified date of the post",
   "main": "block-editor/dist/index.js",
   "scripts": {
@@ -25,14 +25,6 @@
   },
   "homepage": "https://github.com/djuric/change-last-modified-date#readme",
   "devDependencies": {
-    "@wordpress/scripts": "7.1.2",
-    "css-loader": "^3.4.2",
-    "ignore-emit-webpack-plugin": "^2.0.2",
-    "mini-css-extract-plugin": "^0.9.0",
-    "node-sass": "^4.13.1",
-    "path": "^0.12.7",
-    "postcss-loader": "^3.0.0",
-    "postcss-preset-env": "^6.7.0",
-    "sass-loader": "^8.0.2"
+    "@wordpress/scripts": "^12.6.1"
   }
 }
