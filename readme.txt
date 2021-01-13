@@ -2,9 +2,9 @@
 Contributors: djuric
 Tags: last modified, edit date, edit last modified
 Requires at least: 5.1
-Tested up to: 5.3.2
+Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -46,3 +46,6 @@ define( 'CLM_DATE_POST_TYPES', ['post-type-slug-1', 'post-type-slug-2'] );
 
 = 1.3 =
 * Rewrite the plugin for new block editor
+
+= 1.4.2 =
+* Fix plugin crashing for custom post types without custom fields support declared
