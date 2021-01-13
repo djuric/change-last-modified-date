@@ -7,7 +7,7 @@ import { compose } from '@wordpress/compose';
 import { FormToggle } from '@wordpress/components';
 
 const PostModifiedDateFreeze = ({ meta, handleFreezeModified }) => {
-  const { _stopmodifiedupdate: stopModifiedUpdate } = meta;
+  const { _stopmodifiedupdate: stopModifiedUpdate } = { ...meta };
 
   return (
     <>

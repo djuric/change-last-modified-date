@@ -16,7 +16,7 @@ const PostModifiedDateChange = ({
   const settings = __experimentalGetSettings();
   const dateTimeFormat = `${settings.formats.date} ${settings.formats.time}`;
 
-  const { _stopmodifiedupdate: freezeModified } = meta;
+  const { _stopmodifiedupdate: freezeModified } = { ...meta };
 
   return (
     <>
