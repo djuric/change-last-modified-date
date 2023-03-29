@@ -1,6 +1,6 @@
 {
   "name": "change-last-modified-date",
-  "version": "1.4.2",
+  "version": "1.4.3",
   "description": "Change last modified date of the post",
   "main": "block-editor/dist/index.js",
   "scripts": {
