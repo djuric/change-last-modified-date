@@ -25,6 +25,6 @@
   },
   "homepage": "https://github.com/djuric/change-last-modified-date#readme",
   "devDependencies": {
-    "@wordpress/scripts": "^12.6.1"
+    "@wordpress/scripts": "^26.1.0"
   }
 }
