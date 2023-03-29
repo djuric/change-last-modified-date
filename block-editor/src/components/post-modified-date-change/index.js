@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { dateI18n, __experimentalGetSettings } from '@wordpress/date';
+import { dateI18n, getSettings } from '@wordpress/date';
 import { withSelect, withDispatch } from '@wordpress/data';
 import { compose } from '@wordpress/compose';
 import { DateTimePicker, Dropdown, Button } from '@wordpress/components';
@@ -13,7 +13,7 @@ const PostModifiedDateChange = ({
   handleModified,
   meta,
 }) => {
-  const settings = __experimentalGetSettings();
+  const settings = getSettings();
   const dateTimeFormat = `${settings.formats.date} ${settings.formats.time}`;
 
   const { _stopmodifiedupdate: freezeModified } = { ...meta };
@@ -29,7 +29,7 @@ const PostModifiedDateChange = ({
         <>
           <span>{__('Modified', 'clm-date')}</span>
           <Dropdown
-            position="bottom left"
+            popoverProps={{ placement: 'bottom-start' }}
             contentClassName="edit-post-post-schedule__dialog"
             renderToggle={({ onToggle, isOpen }) => (
               <>
@@ -37,7 +37,7 @@ const PostModifiedDateChange = ({
                   className="edit-post-post-schedule__toggle"
                   onClick={onToggle}
                   aria-expanded={isOpen}
-                  isLink
+                  variant="tertiary"
                 >
                   {dateI18n(dateTimeFormat, editedModified)}
                 </Button>
@@ -47,6 +47,8 @@ const PostModifiedDateChange = ({
               <DateTimePicker
                 currentDate={editedModified}
                 onChange={(modified) => handleModified(modified)}
+                __nextRemoveHelpButton
+                __nextRemoveResetButton
               />
             )}
           />
@@ -60,9 +62,8 @@ export default compose([
   withSelect((select) => {
     return {
       editedModified: select('core/editor').getEditedPostAttribute('modified'),
-      currentModified: select('core/editor').getCurrentPostAttribute(
-        'modified'
-      ),
+      currentModified:
+        select('core/editor').getCurrentPostAttribute('modified'),
       meta: select('core/editor').getEditedPostAttribute('meta'),
     };
   }),
