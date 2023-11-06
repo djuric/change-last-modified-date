@@ -22,12 +22,12 @@ const PostModifiedDateChange = ({
     <>
       {freezeModified ? (
         <>
-          <span>{__('Last modified', 'clm-date')}</span>
+          <span>{__('Last modified', 'change-last-modified-date')}</span>
           <b>{dateI18n(dateTimeFormat, currentModified)}</b>
         </>
       ) : (
         <>
-          <span>{__('Modified', 'clm-date')}</span>
+          <span>{__('Modified', 'change-last-modified-date')}</span>
           <Dropdown
             popoverProps={{ placement: 'bottom-start' }}
             contentClassName="edit-post-post-schedule__dialog"
