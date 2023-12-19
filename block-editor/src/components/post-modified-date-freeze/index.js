@@ -11,7 +11,7 @@ const PostModifiedDateFreeze = ({ meta, handleFreezeModified }) => {
 
   return (
     <>
-      <span>{__('Freeze modified date', 'clm-date')}</span>
+      <span>{__('Freeze modified date', 'change-last-modified-date')}</span>
       <FormToggle
         checked={stopModifiedUpdate}
         onChange={() => handleFreezeModified(meta, !stopModifiedUpdate)}

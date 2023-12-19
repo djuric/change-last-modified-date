@@ -1,9 +1,9 @@
 <?php
 /**
  * The plugin bootstrap file
- * 
+ *
  * @package Clm_Date
- * 
+ *
  * @wordpress-plugin
  * Plugin Name:       Change Last Modified Date
  * Plugin URI:        https://zarko.dev
@@ -11,7 +11,7 @@
  * Version:           1.4.4
  * Author:            Zarko
  * Author URI:        https://zarko.dev
- * Text Domain:       clm-date
+ * Text Domain:       change-last-modified-date
  * Domain Path:       /languages
  * License:           GPLv3 or later
  */
