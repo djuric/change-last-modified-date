@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { format, getSettings } from '@wordpress/date';
+import { format, __experimentalGetSettings } from '@wordpress/date';
 import { withSelect, withDispatch } from '@wordpress/data';
 import { compose } from '@wordpress/compose';
 import { DateTimePicker, Dropdown, Button } from '@wordpress/components';
@@ -15,7 +15,7 @@ const PostModifiedDateChange = ({
   handleModified,
   meta,
 }) => {
-  const settings = getSettings();
+  const settings = __experimentalGetSettings();
   const dateTimeFormat = `${settings.formats.date} ${settings.formats.time}`;
 
   const { _stopmodifiedupdate: freezeModified } = { ...meta };
