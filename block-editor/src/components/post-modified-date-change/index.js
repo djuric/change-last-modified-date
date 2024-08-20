@@ -2,18 +2,20 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { dateI18n, __experimentalGetSettings } from '@wordpress/date';
+import { format, getSettings } from '@wordpress/date';
 import { withSelect, withDispatch } from '@wordpress/data';
 import { compose } from '@wordpress/compose';
 import { DateTimePicker, Dropdown, Button } from '@wordpress/components';
+import { __experimentalInspectorPopoverHeader as InspectorPopoverHeader } from '@wordpress/block-editor';
 
 const PostModifiedDateChange = ({
   editedModified,
   currentModified,
+  publishDate,
   handleModified,
   meta,
 }) => {
-  const settings = __experimentalGetSettings();
+  const settings = getSettings();
   const dateTimeFormat = `${settings.formats.date} ${settings.formats.time}`;
 
   const { _stopmodifiedupdate: freezeModified } = { ...meta };
@@ -23,7 +25,7 @@ const PostModifiedDateChange = ({
       {freezeModified ? (
         <>
           <span>{__('Last modified', 'change-last-modified-date')}</span>
-          <b>{dateI18n(dateTimeFormat, currentModified)}</b>
+          <b>{format(dateTimeFormat, currentModified)}</b>
         </>
       ) : (
         <>
@@ -39,17 +41,29 @@ const PostModifiedDateChange = ({
                   aria-expanded={isOpen}
                   variant="tertiary"
                 >
-                  {dateI18n(dateTimeFormat, editedModified)}
+                  {format(dateTimeFormat, editedModified)}
                 </Button>
               </>
             )}
             renderContent={() => (
-              <DateTimePicker
-                currentDate={editedModified}
-                onChange={(modified) => handleModified(modified)}
-                __nextRemoveHelpButton
-                __nextRemoveResetButton
-              />
+              <>
+                <InspectorPopoverHeader
+                  title={__('Modified', 'change-last-modified-date')}
+                  actions={[
+                    {
+                      label: __('Copy published', 'change-last-modified-date'),
+                      onClick: () => handleModified(publishDate),
+                    },
+                  ]}
+                />
+                <DateTimePicker
+                  currentDate={editedModified}
+                  onChange={(modified) => handleModified(modified)}
+                  is12Hour={settings.formats.time.includes('a')}
+                  __nextRemoveHelpButton
+                  __nextRemoveResetButton
+                />
+              </>
             )}
           />
         </>
@@ -64,6 +78,7 @@ export default compose([
       editedModified: select('core/editor').getEditedPostAttribute('modified'),
       currentModified:
         select('core/editor').getCurrentPostAttribute('modified'),
+      publishDate: select('core/editor').getEditedPostAttribute('date'),
       meta: select('core/editor').getEditedPostAttribute('meta'),
     };
   }),

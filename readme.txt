@@ -1,10 +1,10 @@
 === Change Last Modified Date ===
 Contributors: djuric
-Tags: last modified, edit date, edit last modified
+Tags: last modified, edit date, change last modified, edit last modified
 Requires at least: 5.1
-Tested up to: 6.2
+Tested up to: 6.6
 Requires PHP: 5.6
-Stable tag: 1.4.5
+Stable tag: 1.4.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -61,3 +61,9 @@ define( 'CLM_DATE_POST_TYPES', ['post-type-slug-1', 'post-type-slug-2'] );
 = 1.4.5 =
 * Use correct text domain
 * Register translations via wp_set_script_translations()
+
+= 1.4.6 =
+* Fix timezone issue when displaying last modified date 
+* Use 12h format in datetime picker when appropriate
+* Add button to copy published date
+* Use official getSettings instead of __experimentalGetSettings from @wordpress/date
