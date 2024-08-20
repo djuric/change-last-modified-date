@@ -2,7 +2,7 @@
  * WordPress dependencies
  */
 import { __ } from '@wordpress/i18n';
-import { dateI18n, __experimentalGetSettings } from '@wordpress/date';
+import { format, __experimentalGetSettings } from '@wordpress/date';
 import { withSelect, withDispatch } from '@wordpress/data';
 import { compose } from '@wordpress/compose';
 import { DateTimePicker, Dropdown, Button } from '@wordpress/components';
@@ -23,7 +23,7 @@ const PostModifiedDateChange = ({
       {freezeModified ? (
         <>
           <span>{__('Last modified', 'change-last-modified-date')}</span>
-          <b>{dateI18n(dateTimeFormat, currentModified)}</b>
+          <b>{format(dateTimeFormat, currentModified)}</b>
         </>
       ) : (
         <>
@@ -39,7 +39,7 @@ const PostModifiedDateChange = ({
                   aria-expanded={isOpen}
                   variant="tertiary"
                 >
-                  {dateI18n(dateTimeFormat, editedModified)}
+                  {format(dateTimeFormat, editedModified)}
                 </Button>
               </>
             )}
