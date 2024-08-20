@@ -47,6 +47,7 @@ const PostModifiedDateChange = ({
               <DateTimePicker
                 currentDate={editedModified}
                 onChange={(modified) => handleModified(modified)}
+                is12Hour={settings.formats.time.includes('a')}
                 __nextRemoveHelpButton
                 __nextRemoveResetButton
               />
