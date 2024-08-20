@@ -1,8 +1,8 @@
 === Change Last Modified Date ===
 Contributors: djuric
-Tags: last modified, edit date, edit last modified
+Tags: last modified, edit date, change last modified, edit last modified
 Requires at least: 5.1
-Tested up to: 6.2
+Tested up to: 6.6
 Requires PHP: 5.6
 Stable tag: 1.4.6
 License: GPLv3 or later
