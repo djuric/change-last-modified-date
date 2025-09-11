@@ -2,9 +2,9 @@
 Contributors: djuric
 Tags: last modified, edit date, change last modified, edit last modified
 Requires at least: 5.1
-Tested up to: 6.6
+Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 1.4.7
+Stable tag: 1.4.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -70,3 +70,6 @@ define( 'CLM_DATE_POST_TYPES', ['post-type-slug-1', 'post-type-slug-2'] );
 
 = 1.4.7 =
 * Build files for production
+
+= 1.4.8 =
+* Fix GTM date so that it matches current time zone settings
