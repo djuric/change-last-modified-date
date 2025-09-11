@@ -52,9 +52,10 @@ function clm_update_last_modified( $data, $postarr ) {
 
 		$clm_modified_timestamp = strtotime( $postarr['clm_modified'] );
 		$clm_modified_date      = date( 'Y-m-d H:i:s', $clm_modified_timestamp );
+		$clm_modified_date_gmt  = get_gmt_from_date( $clm_modified_date );
 
 		$data['post_modified']     = $clm_modified_date;
-		$data['post_modified_gmt'] = $clm_modified_date;
+		$data['post_modified_gmt'] = $clm_modified_date_gmt;
 	}
 
 	if ( isset( $postarr['clm_stopmodifiedupdate'] ) ) {
