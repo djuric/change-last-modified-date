@@ -56,9 +56,8 @@ function clm_update_last_modified( $data, $postarr ) {
 
 		$data['post_modified']     = $clm_modified_date;
 		$data['post_modified_gmt'] = $clm_modified_date_gmt;
-	}
 
-	if ( isset( $postarr['clm_stopmodifiedupdate'] ) ) {
+	} elseif ( isset( $postarr['clm_stopmodifiedupdate'] ) ) {
 
 		if ( $postarr['clm_stopmodifiedupdate'] ) {
 

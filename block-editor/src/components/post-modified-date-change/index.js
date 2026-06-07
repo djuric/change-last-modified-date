@@ -25,7 +25,7 @@ const PostModifiedDateChange = ({
       {freezeModified ? (
         <>
           <span>{__('Last modified', 'change-last-modified-date')}</span>
-          <b>{format(dateTimeFormat, currentModified)}</b>
+          <b>{format(dateTimeFormat, editedModified)}</b>
         </>
       ) : (
         <>
